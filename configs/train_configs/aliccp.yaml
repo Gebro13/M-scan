@@ -1,0 +1,60 @@
+train_mode: train
+loss_type: ll
+learner: adam
+learning_rate: 1e-3
+l2_norm: 0
+weight_decay: 1e-4
+max_epochs: 100
+eval_step: 1
+clip_grad_norm: {'max_norm': 5, 'norm_type': 2}
+train_batch_size: 1024
+eval_batch_size: 1024
+device: 'cuda:0'
+checkpoint_dir: saved_models/ind
+eval_mode: point
+list_len: 50
+topks: [1,5,10]
+num_trials: 2
+continue_metric: AUC
+eval_metric_bigger: True
+seed: 1111
+reproducibility: False
+counterfactual_debias: False
+alpha: 0.1
+c: 18
+
+
+tags_num: 1
+have_es: False
+batch_neg_size: 5
+
+
+user_f_pos: [0,1,2,3,4,5,6,7,8]
+item_f_pos: [9,10,11,12]
+domain_f_pos: [13]
+
+have_hist: True
+
+# hist_test_dict: data/Cloud_Theme/feateng_data/input_data/test_hist_dict.pkl
+
+train_set: data/Aliccp/feateng_data/input_data/train_set2.pkl
+# train_set: data/Aliccp/feateng_data/input_data/train_d2.pkl
+
+
+
+# test_set: data/Aliccp/feateng_data/input_data/test_set_small.pkl
+test_set: data/Aliccp/feateng_data/input_data/test_set2.pkl
+# test_set: data/Aliccp/feateng_data/input_data/test_d2.pkl
+
+ckpt_file: None
+# ckpt_file: saved_models/ind/ncf-aliccp-Jun-02-2023_00-48-16.pth
+# ckpt_file: saved_models/ind/my_model_debias-aliccp-Apr-16-2023_01-31-57.pth
+# ckpt_file: saved_models/ind/mmoe-aliccp-Apr-19-2023_14-45-08.pth
+# ckpt_file: saved_models/ind/m2m-aliccp-May-03-2023_14-55-37.pth
+# ckpt_file: saved_models/ind/ple-aliccp-May-04-2023_12-31-14.pth
+# ckpt_file: saved_models/ind/aesm2-aliccp-Apr-23-2023_02-42-32.pth
+# ckpt_file: saved_models/ind/shared_bottom-aliccp-Apr-14-2023_21-34-12.pth
+#ckpt_file: saved_models/ind/ncf-Cloud-Nov-24-2022_08-35-51.pth
+
+gauc: False
+

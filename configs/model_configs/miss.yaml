@@ -1,0 +1,22 @@
+lastfm: {
+  model_name: miss,
+  embed_dim: 64,
+  hidden_dims: [200, 80],
+  dropout: 0.2,
+  use_hist: True,
+  gru_h_dim: 128,
+  n_heads: 3,
+  hist_session_num: 10,
+  hist_session_length: 5,
+}
+hvideo: {
+  model_name: miss,
+  embed_dim: 64,
+  hidden_dims: [200, 80],
+  dropout: 0.2,
+  use_hist: True,
+  gru_h_dim: 64,
+  n_heads: 3,
+  hist_session_num: 5,
+  hist_session_length: 4,
+}

@@ -1,0 +1,22 @@
+
+aliccp: {
+  model_name: mmoe,
+  embed_dim: 32,
+  hidden_dims: [512, 256],
+  tower_dims: [128,64],
+  dropout: 0.2,
+  use_hist: True,
+  expert_num: 3,
+  task_num: 1,
+}
+
+Cloud: {
+  model_name: mmoe,
+  embed_dim: 32,
+  hidden_dims: [512, 256],
+  tower_dims: [128,64],
+  dropout: 0.2,
+  use_hist: True,
+  expert_num: 3,
+  task_num: 1,
+}

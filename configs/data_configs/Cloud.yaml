@@ -1,0 +1,11 @@
+# important meta data
+dataset_name: Cloud
+user_num_fields: 1
+item_num_fields: 3
+domain_num_fields: 1
+num_fields: 5
+have_hist: True
+vocabulary_size: 1124422
+domain_num: 775604
+domain_size: 355
+max_hist_len: 5

@@ -1,0 +1,24 @@
+
+aliccp: {
+  model_name: my_model,
+  embed_dim: 32,
+  hidden_dims: [512,256],
+  tower_dims: [128,64],
+  dropout: 0.2,
+  use_hist: True,
+  gru_h_dim: 32,
+  expert_num: 4,
+  task_num: 1,
+}
+
+Cloud: {
+  model_name: my_model,
+  embed_dim: 32,
+  hidden_dims: [512,256],
+  tower_dims: [128,64],
+  dropout: 0.2,
+  use_hist: True,
+  gru_h_dim: 32,
+  expert_num: 4,
+  task_num: 1,
+}

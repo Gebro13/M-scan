@@ -1,0 +1,12 @@
+# important meta data
+dataset_name: aliccp
+user_num_fields: 9
+item_num_fields: 4
+domain_num_fields: 1
+num_fields: 14
+have_hist: False
+vocabulary_size: 5732623
+domain_num: 5732618
+domain_size: 3
+max_theme_hist_len: 20
+max_hist_len: 40

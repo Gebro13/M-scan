@@ -1,0 +1,5 @@
+aliccp: {
+  model_name: lr,
+  embed_dim: 64,
+  use_hist: False
+}

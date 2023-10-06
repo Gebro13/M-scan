@@ -1,0 +1,19 @@
+
+
+lastfm: {
+  model_name:pinet,
+  embed_dim: 64,
+  hidden_dims: [200, 80],
+  dropout: 0.2,
+  use_hist: True,
+  gru_h_dim: 128,
+}
+
+hvideo: {
+  model_name:pinet,
+  embed_dim: 64,
+  hidden_dims: [200, 80],
+  dropout: 0.2,
+  use_hist: True,
+  gru_h_dim: 64,
+}

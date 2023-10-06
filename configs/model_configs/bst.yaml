@@ -1,0 +1,24 @@
+zj: {
+  model_name: bst,
+  embed_dim: 64,
+  hidden_dims: [200, 80],
+  dropout: 0.2,
+  use_hist: True,
+}
+
+
+lastfm: {
+  model_name: bst,
+  embed_dim: 64,
+  hidden_dims: [200, 80],
+  dropout: 0.2,
+  use_hist: True,
+}
+
+hvideo: {
+  model_name: bst,
+  embed_dim: 64,
+  hidden_dims: [200, 80],
+  dropout: 0.2,
+  use_hist: True,
+}
