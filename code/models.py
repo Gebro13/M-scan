@@ -840,15 +840,6 @@ class M2M(Rec):
 
 
 
-
-
-
-
-
-
-
-
-
 class DIN_SESSION(Rec):
     def __init__(self, model_config, data_config):
         super(DIN_SESSION, self).__init__(model_config, data_config)

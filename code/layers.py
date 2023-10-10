@@ -255,11 +255,11 @@ class CoAtt(torch.nn.Module):
         att_score[~mask_session] = self.null_attention
         att_score[~mask_hist] = self.null_attention
 
-        #先softmax再mean
+        #first softmax then mean
         # att_score = (torch.nn.Softmax(dim=1)(att_score.reshape(-1,s_len*h_len))).reshape(-1,s_len,h_len)
         # att_score = torch.sum(att_score,dim=1)
         
-        #先max再softmax
+        #first max then softmax
         score = torch.max(att_score.squeeze(),dim=1)[0]
         att_score = torch.nn.Softmax(dim=1)(score)
 
@@ -307,11 +307,11 @@ class CoAtt2(torch.nn.Module):
         att_score[~mask_session] = self.null_attention
         att_score[~mask_hist] = self.null_attention
 
-        #先softmax再mean
+        #first softmax then mean
         # att_score = (torch.nn.Softmax(dim=1)(att_score.reshape(-1,s_len*h_len))).reshape(-1,s_len,h_len)
         # att_score = torch.sum(att_score,dim=1)
         
-        #先max再softmax
+        #first max then softmax
         score = torch.max(att_score.squeeze(),dim=1)[0]
         att_score = torch.nn.Softmax(dim=1)(score)
 
@@ -375,7 +375,7 @@ class PLELayer(torch.nn.Module):
                 mix_ouput=torch.cat(task_output+share_output,dim=1)
                 gate_value = self.task_gates[i][j](task_fea[j]).unsqueeze(1)
                 task_fea[j] = torch.bmm(gate_value, mix_ouput).squeeze(1)
-            if i != self.layers_num-1:#最后一层不需要计算share expert 的输出
+            if i != self.layers_num-1:#the output of share expert in the last layer shouldn't be calculated
                 gate_value = self.share_gates[i](task_fea[-1]).unsqueeze(1)
                 mix_ouput = torch.cat(task_output_list + share_output, dim=1)
                 task_fea[-1] = torch.bmm(gate_value, mix_ouput).squeeze(1)
@@ -392,7 +392,7 @@ class PositionalEmbedding(torch.nn.Module):
         self.d_model = d_model
         self.max_len = max_len
 
-        # 创建位置编码表
+        # create positional encoding table
         pe = torch.zeros(max_len, d_model)
         position = torch.arange(0, max_len).unsqueeze(1)
         div_term = torch.exp(torch.arange(0, d_model, 2) *
@@ -403,11 +403,11 @@ class PositionalEmbedding(torch.nn.Module):
         self.register_buffer('pe', pe)
 
     def forward(self, x):
-        # 输入的 x 是一个形状为 (batch_size, seq_len, d_model) 的张量
+        # x (batch_size, seq_len, d_model)
         batch_size, seq_len, d_model = x.size()
-        # 将位置编码表扩展为 (batch_size, seq_len, d_model) 的形状
+        #  (batch_size, seq_len, d_model)
         pe = self.pe[:, :seq_len].expand(batch_size, seq_len, d_model)
-        # 将位置编码表与输入张量相加，作为位置编码后的输出
+        # 
         
         return pe
 
@@ -427,7 +427,7 @@ class MetaUnit(torch.nn.Module):
 
     def forward(self, x, meta_param):
         #
-        #如果一个batch_size*input_dim的东西过linear层得到batch_size*output_dim的东西，那么weight的维度为(output_dim,input_dim),bias的维度为(output_dim,)
+        # batch_size*input_dim - >linear = batch_size*output_dim，then weight (output_dim,input_dim),bias (output_dim,)
         meta_param = self.fc(meta_param)
         count= 0
         _, x_input_dim = x.shape
@@ -458,8 +458,8 @@ class MetaAttention(torch.nn.Module):
         self.meta_unit = MetaUnit(x_input_dim,meta_input_dim,meta_dims,output_layer = True)
 
     def forward(self, X, meta_param):
-        #如果一个batch_size*input_dim的东西过linear层得到batch_size*output_dim的东西，那么weight的维度为(output_dim,input_dim),bias的维度为(output_dim,)
-        
+        # batch_size*input_dim - >linear = batch_size*output_dim，then weight (output_dim,input_dim),bias (output_dim,)
+       
         scores = torch.cat([self.meta_unit(x,meta_param) for x in X],dim=1) # batch_size*expert_num
         scores = torch.nn.Softmax(dim=1)(scores).unsqueeze(2) #batch_size*expert_num*1
         X = torch.cat([x.unsqueeze(1) for x in X],dim=1) #batch_size*expert_num*dim

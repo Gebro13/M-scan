@@ -301,13 +301,13 @@ def dataset_statistics():
     import matplotlib.pyplot as plt
 
     plt.plot(x,y)
-    # 添加标签和标题
+    # add label
     plt.xlabel('Value')
     plt.ylabel('Frequency')
     plt.title('Histogram')
     plt.xlim(left = 0,right=100)
 
-    # 显示图形
+    # 
     plt.show()
     plt.savefig('1.png', dpi=300, bbox_inches='tight')
     lengths = []
@@ -336,13 +336,13 @@ def dataset_statistics():
     import matplotlib.pyplot as plt
 
     plt.plot(x,y)
-    # 添加标签和标题
+    #
     plt.xlabel('Value')
     plt.ylabel('Frequency')
     plt.title('Histogram')
     plt.xlim(left = 0,right=100)
 
-    # 显示图形
+    # 
     plt.show()
     
     plt.savefig('4.png', dpi=300, bbox_inches='tight')
@@ -395,7 +395,7 @@ def resplit_hist_train_test(train_,test_,hist_file,train_file,test_file):
                 length = len(avail_behavs)
                 for i in range(int(0.6*length)):
                     behav = avail_behavs[i]
-                    # 同theme的behavior
+                    # same theme behavior
                     item,click,time = behav
                     theme_behavs_chosen = theme_behavs[theme_behavs[:,2]<time]
                     
@@ -406,7 +406,7 @@ def resplit_hist_train_test(train_,test_,hist_file,train_file,test_file):
                     lengths.append(len(theme_behavs_chosen[-20:]))
                     theme_behavs_chosen = padding(theme_behavs_chosen,20)
                     # print(theme_behavs_chosen)
-                    # 不同theme的behavior
+                    # different theme behavior
                     
                     # lengths.append(len(theme_behavs_chosen))
                     behavs_chosen = all_behavs[all_behavs[:,2]<time]
@@ -420,14 +420,14 @@ def resplit_hist_train_test(train_,test_,hist_file,train_file,test_file):
                    
                 for i in range(int(0.6*length),int(length)):
                     behav = avail_behavs[i]
-                    # 同theme的behavior
+                    # same theme behavior
                     item,click,time = behav
                     theme_behavs_chosen = theme_behavs[theme_behavs[:,2]<time]
                     
                     theme_behavs_chosen = theme_behavs_chosen[theme_behavs_chosen[:,1]==1]
                     
                     theme_behavs_chosen = padding(theme_behavs_chosen,20)
-                     # 不同theme的behavior
+                     # different theme behavior
                     
                     # lengths.append(len(theme_behavs_chosen))
                     behavs_chosen = all_behavs[all_behavs[:,2]<time]
@@ -572,6 +572,6 @@ if __name__ == '__main__':
     # split_test_domain('feateng_data/input_data/test_set2.pkl',['feateng_data/input_data/test_d1.pkl','feateng_data/input_data/test_d2.pkl','feateng_data/input_data/test_d3.pkl'])
     # split_test_domain('feateng_data/input_data/train_set2.pkl',['feateng_data/input_data/train_d1.pkl','feateng_data/input_data/train_d2.pkl','feateng_data/input_data/train_d3.pkl'])
     # generate_hist_dict
-
+    pass
 
     

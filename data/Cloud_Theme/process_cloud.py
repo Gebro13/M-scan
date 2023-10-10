@@ -177,13 +177,11 @@ def dataset_statistics():
     import matplotlib.pyplot as plt
 
     plt.plot(x,y)
-    # 添加标签和标题
     plt.xlabel('Value')
     plt.ylabel('Frequency')
     plt.title('Histogram')
     plt.xlim(left = 0,right=100)
 
-    # 显示图形
     plt.show()
     plt.savefig('1.png', dpi=300, bbox_inches='tight')
 
@@ -214,13 +212,11 @@ def dataset_statistics():
     import matplotlib.pyplot as plt
 
     plt.plot(x,y)
-    # 添加标签和标题
     plt.xlabel('Value')
     plt.ylabel('Frequency')
     plt.title('Histogram')
     plt.xlim(left = 0,right=100)
 
-    # 显示图形
     plt.show()
     
     plt.savefig('4.png', dpi=300, bbox_inches='tight')

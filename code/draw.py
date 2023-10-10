@@ -60,18 +60,18 @@ plt.rcParams['font.size'] = 15
 fig = plt.figure(figsize=(8, 4))
 gs = gridspec.GridSpec(1, 2)
 
-# 绘制第一个子图
+# draw the first sub-graph
 ax1 = fig.add_subplot(gs[0])
-ax1.plot(aliccp_c,aliccp_auc,color ='#90baf4')  # 绘制第一个图的数据
+ax1.plot(aliccp_c,aliccp_auc,color ='#90baf4')  # feed data in the first graph
 ax1.scatter(aliccp_c,aliccp_auc,color = '#90baf4')
 ax1.set_xlabel('c (when '+chr(945)+' = 0.001)')
 ax1.set_ylabel('AUC')
 ax1.set_title('Aliccp')
 ax1.set_xticks(np.linspace(0, 100, 6))
 ax1.set_yticks(np.linspace(0.6595,0.6715,7))
-# 创建第二个图
+# create another graph
 ax2 = fig.add_subplot(gs[1])
-ax2.plot(cloud_c,cloud_auc,color ='#90baf4')  # 绘制第一个图的数据
+ax2.plot(cloud_c,cloud_auc,color ='#90baf4')  # feed data in the second graph
 ax2.scatter(cloud_c,cloud_auc,color = '#90baf4')
 ax2.set_xlabel('c (when '+chr(945)+' = 0.1)')
 ax2.set_ylabel('AUC')
@@ -82,22 +82,3 @@ plt.tight_layout()
 
 plt.show()
 plt.savefig('hyperparameter_c.pdf')
-
-
-# # Press the green button in the gutter to run the script.
-# if __name__ == '__main__':
-#     #
-#     # # Set your API key
-#     openai.api_key = "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"
-#     # Use the GPT-3 model
-#     completion = openai.Completion.create(
-#     engine = "text-davinci-003",
-#     prompt = "用可爱的语气回答：那我跟朱大爷僵尸。",
-#     max_tokens = 1024,
-#     temperature = 0.9
-#     )
-#     # Print the generated text
-#
-#     print(completion.choices[0].text)
-#
-# # See PyCharm help at https://www.jetbrains.com/help/pycharm/
