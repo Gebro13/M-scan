@@ -18,7 +18,7 @@ python process_aliccp.py
 After you've preprocessed all the data, you can do the training by the following command
 
 ```shell
-python train.py -d aliccp -m m-scan
+python train.py -d aliccp -m m_scan
 ```
 
 In this command, Aliccp is a dataset, and m-scan is our proposed model.
