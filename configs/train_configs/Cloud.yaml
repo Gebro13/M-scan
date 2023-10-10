@@ -49,7 +49,7 @@ ckpt_file: saved_models/ind/ncf-Cloud-Jun-02-2023_00-48-16.pth
 # ckpt_file: saved_models/ind/m2m-Cloud-May-04-2023_13-11-18.pth
 
 # ckpt_file: saved_models/ind/mmoe-Cloud-Apr-20-2023_00-58-23.pth
-# ckpt_file: saved_models/ind/my_model_debias-Cloud-Apr-20-2023_20-55-04.pth
+# ckpt_file: saved_models/ind/m_scan_debias-Cloud-Apr-20-2023_20-55-04.pth
 # ckpt_file: saved_models/ind/ple-Cloud-May-04-2023_13-45-36.pth
 # ckpt_file: saved_models/ind/shared_bottom-Cloud-Apr-20-2023_01-04-23.pth
 #ckpt_file: saved_models/ind/ncf_debias-Cloud-Nov-24-2022_08-39-48.pth

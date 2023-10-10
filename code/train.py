@@ -9,7 +9,7 @@ from dataloader import Dataloader, DomainDataloader
 from utils.log import init_logger
 from utils.yaml_loader import get_yaml_loader
 from logging import getLogger
-from models import LR, WDL, DSSM, FM, DeepFM, YouTubeDNN, FFM, PNN, DCN, DIN, UBR, COSMO, DIEN, GRU4REC,BST,DIN_SESSION,MISS,COSMO2,NCF,Pinet,ISN,DIN_BPR,NCF_DEBIAS,DCN_DEBIAS,MY_MODEL,MMOE,SHARED_BOTTOM,PLE,MY_MODEL_DEBIAS,AESM2,M2M
+from models import LR, WDL, DSSM, FM, DeepFM, YouTubeDNN, FFM, PNN, DCN, DIN, UBR, COSMO, DIEN, GRU4REC,BST,DIN_SESSION,MISS,COSMO2,NCF,Pinet,ISN,DIN_BPR,NCF_DEBIAS,DCN_DEBIAS,M_SCAN,MMOE,SHARED_BOTTOM,PLE,M_SCAN_DEBIAS,AESM2,M2M
 from trainer import Trainer
 
 def get_model(model_name, model_config, data_config):
@@ -62,16 +62,16 @@ def get_model(model_name, model_config, data_config):
         return NCF_DEBIAS(model_config,data_config)
     elif model_name == 'dcn_debias':
         return DCN_DEBIAS(model_config, data_config)
-    elif model_name == 'my_model':
-        return MY_MODEL(model_config, data_config)
+    elif model_name == 'm_scan':
+        return M_SCAN(model_config, data_config)
     elif model_name == 'mmoe':
         return MMOE(model_config, data_config)
     elif model_name == 'shared_bottom':
         return SHARED_BOTTOM(model_config,data_config)
     elif model_name == 'ple':
         return PLE(model_config,data_config)
-    elif model_name == 'my_model_debias':
-        return MY_MODEL_DEBIAS(model_config,data_config)
+    elif model_name == 'm_scan_debias':
+        return M_SCAN_DEBIAS(model_config,data_config)
     elif model_name == 'aesm2':
         return AESM2(model_config,data_config)
     elif model_name == 'm2m':

@@ -412,9 +412,9 @@ class DIN(Rec):
         out = self.mlp(inp).squeeze(1)
         return torch.sigmoid(out),score
 
-class MY_MODEL_DEBIAS(Rec):
+class M_SCAN_DEBIAS(Rec):
     def __init__(self, model_config, data_config):
-        super(MY_MODEL_DEBIAS, self).__init__(model_config, data_config)
+        super(M_SCAN_DEBIAS, self).__init__(model_config, data_config)
         self.embedding = FeaturesEmbedding(self.vocabulary_size, self.embed_dim)
         self.label_embedding = FeaturesEmbedding(2, self.embed_dim)
         inter_fields = self.item_num_fields+self.num_fields
@@ -434,7 +434,7 @@ class MY_MODEL_DEBIAS(Rec):
         # self.plelayer = PLELayer(self.expert_num,self.hidden_dims,self.tower_dims,self.task_num,self.embed_dim,mlp_dim,self.dropout)
         
     def get_name(self):
-        return 'MY_MODEL_DEBIAS'
+        return 'M_SCAN_DEBIAS'
 
     def forward(self, x_user, x_item,x_domain,theme_hist, theme_hist_len, user_hist, hist_len):
         
@@ -478,9 +478,9 @@ class MY_MODEL_DEBIAS(Rec):
         return y_uid*torch.sigmoid(y_d),y_d
 
 
-class MY_MODEL(Rec):
+class M_SCAN(Rec):
     def __init__(self, model_config, data_config):
-        super(MY_MODEL, self).__init__(model_config, data_config)
+        super(M_SCAN, self).__init__(model_config, data_config)
         self.embedding = FeaturesEmbedding(self.vocabulary_size, self.embed_dim)
         self.label_embedding = FeaturesEmbedding(2, self.embed_dim)
         inter_fields = self.item_num_fields+self.num_fields
@@ -498,7 +498,7 @@ class MY_MODEL(Rec):
         self.plelayer = PLELayer(self.expert_num,self.hidden_dims,self.tower_dims,self.task_num,self.embed_dim,mlp_dim,self.dropout)
         
     def get_name(self):
-        return 'MY_MODEL'
+        return 'M_SCAN'
 
     def forward(self, x_user, x_item,x_domain,theme_hist, theme_hist_len, user_hist, hist_len):
         

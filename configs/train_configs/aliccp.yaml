@@ -48,7 +48,7 @@ test_set: data/Aliccp/feateng_data/input_data/test_set2.pkl
 
 ckpt_file: None
 # ckpt_file: saved_models/ind/ncf-aliccp-Jun-02-2023_00-48-16.pth
-# ckpt_file: saved_models/ind/my_model_debias-aliccp-Apr-16-2023_01-31-57.pth
+# ckpt_file: saved_models/ind/m_scan_debias-aliccp-Apr-16-2023_01-31-57.pth
 # ckpt_file: saved_models/ind/mmoe-aliccp-Apr-19-2023_14-45-08.pth
 # ckpt_file: saved_models/ind/m2m-aliccp-May-03-2023_14-55-37.pth
 # ckpt_file: saved_models/ind/ple-aliccp-May-04-2023_12-31-14.pth
